@@ -45,7 +45,7 @@ export async function submitContact(prevState: any, formData: FormData) {
                     email: validatedFields.data.email,
                     company: validatedFields.data.company || null,
                     message: validatedFields.data.message,
-                    status: "new",
+                    status: "pending",
                 },
             ]);
 

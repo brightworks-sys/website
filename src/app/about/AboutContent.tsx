@@ -35,12 +35,12 @@ export default function AboutContent() {
                     >
                         <h2 className="mb-6 text-3xl font-bold text-zinc-900 dark:text-white">Mission</h2>
                         <p className="mb-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-                            私たちは単なる開発会社ではありません。お客様の「パートナー」として、
-                            ビジネスの本質的な課題を深く理解し、エンジニアリングの力で解決策を具現化します。
+                            Bright Worksは、現場の「不便」を「感動」に変えるデジタルパートナーです。
+                            単なる開発会社ではなく、お客様の事業を深く理解し、自社プロダクト開発で培ったノウハウを惜しみなく提供します。
                         </p>
                         <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
-                            元マネージャーエンジニアとしての知見を活かし、スピード感のある開発と、
-                            将来の拡張性を見据えた高品質なアーキテクチャを両立させます。
+                            Commission Flow、Prism、BRIGHT-MATCHといった自社ソリューションを通じて培った
+                            「現場で本当に使われるシステム」の知見を活かし、お客様のDXを成功に導きます。
                         </p>
                     </motion.div>
 
@@ -52,18 +52,18 @@ export default function AboutContent() {
                     >
                         {[
                             {
-                                title: "スピードと品質の両立",
-                                desc: "最新のモダンスタックを熟知し、迅速なプロトタイピングから商用レベルの実装まで最短距離で提供します。",
+                                title: "現場主義のプロダクト開発",
+                                desc: "自社システムを自ら運用しているからこそわかる、現場の細かなニーズを形にします。",
                                 icon: <Zap className="h-6 w-6 text-yellow-500" />
                             },
                             {
-                                title: "ビジネス視点の技術提案",
-                                desc: "技術を目的化せず、ROI（投資対効果）を重視した最適な技術選定と機能実装を提案します。",
+                                title: "最短距離での価値提供",
+                                desc: "実績のあるモジュールを組み合わ、高品質なシステムを迅速に構築・提供します。",
                                 icon: <Award className="h-6 w-6 text-blue-500" />
                             },
                             {
-                                title: "徹底した透明性",
-                                desc: "開発プロセスの可視化と密なコミュニケーションにより、安心してお任せいただける信頼関係を構築します。",
+                                title: "伴走型のDX支援",
+                                desc: "システムを作って終わりではなく、運用が定着し利益に貢献するまで徹底サポートします。",
                                 icon: <CheckCircle2 className="h-6 w-6 text-green-500" />
                             },
                         ].map((strength) => (
@@ -87,11 +87,11 @@ export default function AboutContent() {
                     <table className="w-full text-left">
                         <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800 text-zinc-600 dark:text-zinc-400">
                             {[
-                                { label: "屋号", value: "Brightworks (ブライトワークス)" },
-                                { label: "設立", value: "2024年4月" },
-                                { label: "代表", value: "内田 亮 (Ryo Uchida)" },
-                                { label: "所在地", value: "神奈川県藤沢市" },
-                                { label: "事業内容", value: "Webアプリケーション開発、DXコンサルティング、技術顧問" },
+                                { label: "屋号", value: "Bright Works (ブライトワークス)" },
+                                { label: "代表", value: "大澤 圭一 (Keiichi Osawa)" },
+                                { label: "所在地", value: "神奈川県大和市" },
+                                { label: "連絡先", value: "brightworks.kanagawa@gmail.com" },
+                                { label: "事業内容", value: "DXソリューション提供、システム開発（Commission Flow, Prism, BRIGHT-MATCH 等）" },
                             ].map((row) => (
                                 <tr key={row.label} className="bg-white/50 dark:bg-black/50 backdrop-blur-sm">
                                     <th className="w-1/3 px-6 py-6 font-semibold sm:px-12">{row.label}</th>

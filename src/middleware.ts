@@ -38,7 +38,7 @@ export async function middleware(request: NextRequest) {
         }
 
         // 管理者メールアドレスの制限（環境変数またはハードコード）
-        const adminEmail = process.env.ADMIN_EMAIL || 'admin@bright-works.jp'
+        const adminEmail = process.env.ADMIN_EMAIL || 'brightworks.kanagawa@gmail.com'
         if (user.email !== adminEmail) {
             // 権限がない場合はログアウトさせてトップへ
             await supabase.auth.signOut()

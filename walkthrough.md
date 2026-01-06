@@ -62,9 +62,20 @@ web/
 - **特定商取引法に基づく表記**: `/tokushoho` ルートを新設。決済審査に必須となる販売者情報、支払時期、返品ポリシーなどを網羅。
 - **フッター最適化**: サイト下部のメニューに当該ページへのリンクを追加し、法的要件を完全に満たしました。
 
+### 6. GitHub 連携 & デプロイ準備 [NEW]
+- **GitHub Repository**: [website](https://github.com/brightworks-sys/website.git) へのリモート連携と初回プッシュを完了しました。
+- **Vercel Readiness**: ビルドチェックを通過し、Vercel へのデプロイがいつでも可能な状態です。
+
 ## 管理画面へのアクセス方法
 1. `/login` ページにアクセス。
 2. 管理者用アカウントでログイン（Supabase Auth に事前に登録が必要）。
 3. 自動的に `/admin` ダッシュボードへ遷移します。
    > [!IMPORTANT]
    > 閲覧権限は `src/middleware.ts` または環境変数 `ADMIN_EMAIL` で指定されたアドレスに限定されています。
+
+## デプロイ後の確認用URL
+- **Home**: `/` (ビジュアル・アニメーション確認)
+- **Services**: `/services` (サービス紹介)
+- **News**: `/news` (ISR動態化・Supabase連携確認)
+- **Tokushoho**: `/tokushoho` (Stripe審査用項目確認)
+- **Admin**: `/login` (管理者ログイン・BW-OS確認)

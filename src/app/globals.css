@@ -1,44 +1,99 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Roboto Mono,
-    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.5 0.2 260);
-  --primary-foreground: oklch(1 0 0);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    /* Bright Works Theme Colors (Modern, Clean, Trustworthy) */
+    --brand-50: 210 100% 98%;
+    --brand-100: 210 100% 95%;
+    --brand-200: 211 100% 89%;
+    --brand-300: 213 100% 80%;
+    --brand-400: 214 96% 66%;
+    --brand-500: 217 91% 60%; /* Primary Brand - Bright Blue */
+    --brand-600: 222 84% 54%;
+    --brand-700: 225 78% 48%;
+    --brand-800: 226 71% 40%;
+    --brand-900: 225 61% 33%;
+    --brand-950: 226 56% 22%;
+    --brand-foreground: 0 0% 100%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    
+    --brand-50: 226 56% 22%;
+    --brand-100: 225 61% 33%;
+    --brand-200: 226 71% 40%;
+    --brand-300: 225 78% 48%;
+    --brand-400: 222 84% 54%;
+    --brand-500: 217 91% 60%;
+    --brand-600: 214 96% 66%;
+    --brand-700: 213 100% 80%;
+    --brand-800: 211 100% 89%;
+    --brand-900: 210 100% 95%;
+    --brand-950: 210 100% 98%;
+    --brand-foreground: 0 0% 100%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Touch Target & Interaction Base Rules from DEEP_FRONTEND_UI_UX_RULES */
+  button,
+  a {
+    @apply cursor-pointer transition-colors duration-200;
+  }
 }
 
-/* プレミアムな背景グラデーション */
-.bg-mesh {
-  background-image: 
-    radial-gradient(at 0% 0%, oklch(0.6 0.15 260 / 0.15) 0, transparent 50%),
-    radial-gradient(at 100% 100%, oklch(0.6 0.15 300 / 0.15) 0, transparent 50%);
-}
-
+/* Glassmorphism helpers */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply bg-white/70 backdrop-blur-md border border-white/20 dark:bg-black/50 dark:border-white/10;
 }

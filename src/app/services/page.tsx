@@ -1,11 +1,10 @@
 import { Metadata } from "next";
+import ServicesContent from "./ServicesContent";
 
 export const metadata: Metadata = {
-    title: "Services",
-    description: "中小企業・個人事業主向けのDX導入支援、カスタムシステム開発、技術コンサルティングを提供します。",
+    title: "Services | Bright Works",
+    description: "完成済みの高品質な基盤をカスタマイズ・OEM提供。短納期・低コストで次世代のビジネスインフラストラクチャを実現します。",
 };
-
-import ServicesContent from "./ServicesContent";
 
 export default function ServicesPage() {
     return <ServicesContent />;
